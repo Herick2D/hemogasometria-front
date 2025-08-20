@@ -11,6 +11,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Análise de Hemogasometria",
   description: "Ferramenta para diagnóstico de distúrbios ácido-base",
+  icons: {
+    icon: "/logo_uff.png"
+  }
 };
 
 export default function RootLayout({
