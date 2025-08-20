@@ -1,13 +1,15 @@
 import Header from "@/components/Header";
+import GasometryAnalysis from "@/components/GasometryAnalysis";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main>
+    <div className="bg-slate-50 min-h-screen">
       <Header />
-      
-      <div className="container mx-auto p-6">
-        <h1>Conteúdo Principal</h1>
-      </div>
-    </main>
+      <main>
+        <GasometryAnalysis />
+      </main>
+      <Footer />
+    </div>
   );
 }
