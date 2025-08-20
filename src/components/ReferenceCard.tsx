@@ -20,7 +20,9 @@ export default function ReferenceCard() {
     const toastId = toast.loading('Iniciando download do guia...');
 
     try {
-      const response = await axios.get('http://localhost:3333/download/guide', {
+      const guideUrl = `${process.env.NEXT_PUBLIC_API_URL}/download/guide`;
+
+      const response = await axios.get(guideUrl, {
         responseType: 'blob',
       });
 

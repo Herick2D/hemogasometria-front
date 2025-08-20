@@ -7,7 +7,7 @@ import ReferenceCard from './ReferenceCard';
 import ResultModal from './ResultModal';
 import { IAnalysisResult } from '@/types/analysis.types';
 
-const API_URL = 'http://localhost:3333/analyze';
+const API_URL = `${process.env.NEXT_PUBLIC_API_URL}/analyze`;
 
 export default function GasometryAnalysis() {
   const [result, setResult] = useState<IAnalysisResult | null>(null);
