@@ -4,7 +4,7 @@ import { Linkedin } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-slate-50 mt-12">
+    <footer className="w-full bg-slate-50 mt-2"> 
       <div className="container mx-auto px-6 py-6 flex flex-col items-center">
         
         <hr className="w-20 border-t border-slate-200 mb-6" />
