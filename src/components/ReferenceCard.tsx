@@ -15,14 +15,15 @@ export default function ReferenceCard() {
   const openInfoModal = () => setIsInfoModalOpen(true);
   const closeInfoModal = () => setIsInfoModalOpen(false);
 
+  // URL base da API a partir das variáveis de ambiente
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+
   const handleGuideDownload = async () => {
     setIsGuideDownloading(true);
     const toastId = toast.loading('Iniciando download do guia...');
 
     try {
-      const guideUrl = `${process.env.NEXT_PUBLIC_API_URL}/download/guide`;
-
-      const response = await axios.get(guideUrl, {
+      const response = await axios.get(`${apiUrl}/download/guide`, {
         responseType: 'blob',
       });
 
@@ -39,7 +40,7 @@ export default function ReferenceCard() {
       toast.success('Download do guia concluído!', { id: toastId });
 
     } catch (error) {
-      console.error("Falha no download:", error);
+      console.error("Falha no download do guia:", error);
       toast.error('Falha no download do guia.', { id: toastId });
     } finally {
       setIsGuideDownloading(false);
@@ -48,10 +49,31 @@ export default function ReferenceCard() {
 
   const handleBibDownload = async () => {
     setIsBibDownloading(true);
-    const toastId = toast.loading('Verificando link...');
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    toast.error('Endpoint ainda não configurado.', { id: toastId });
-    setIsBibDownloading(false);
+    const toastId = toast.loading('Iniciando download das referências...');
+
+    try {
+      const response = await axios.get(`${apiUrl}/download/bibliography`, {
+        responseType: 'blob',
+      });
+
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', 'referencias.pdf');
+      document.body.appendChild(link);
+      link.click();
+
+      link.parentNode?.removeChild(link);
+      window.URL.revokeObjectURL(url);
+
+      toast.success('Download das referências concluído!', { id: toastId });
+
+    } catch (error) {
+      console.error("Falha no download das referências:", error);
+      toast.error('Falha no download das referências.', { id: toastId });
+    } finally {
+      setIsBibDownloading(false);
+    }
   };
 
   return (
@@ -102,7 +124,7 @@ export default function ReferenceCard() {
               <FileText className="h-5 w-5 text-cyan-600" />
             )}
             <span className="font-medium text-slate-700">
-              {isBibDownloading ? 'Buscando...' : 'Bibliografia Básica da Disciplina'}
+              {isBibDownloading ? 'Baixando...' : 'Referências'}
             </span>
           </button>
         </div>
