@@ -47,6 +47,24 @@ export default function Footer() {
             </div>
           </a>
 
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visitar o site da UFF"
+            className="group"
+          >
+            <div className="bg-white w-16 h-16 rounded-full flex items-center justify-center p-2 ring-1 ring-slate-200 shadow-sm group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+              <Image 
+                src="/logo_lnmd.png" 
+                alt="Logo comemorativo de 65 Anos da UFF" 
+                width={48}
+                height={48}
+                className="object-contain"
+              />
+            </div>
+          </a>
+
         </div>
 
         <div className="mt-8 flex flex-col md:flex-row items-start justify-center gap-x-6 gap-y-4">
