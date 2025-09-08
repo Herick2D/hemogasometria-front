@@ -74,7 +74,7 @@ export default function ResultModal({ isOpen, onClose, isLoading, error, result 
                         <p className="font-bold text-lg text-cyan-700">{result.diagnosis}</p>
                       </div>
                       <div>
-                        <p className="text-sm text-slate-500">Distúrbio Primário:</p>
+                        <p className="text-sm text-slate-500">Alteração:</p>
                         <p>{result.primaryDisturbance}</p>
                       </div>
                       {result.compensatoryDisturbance && (
