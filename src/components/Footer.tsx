@@ -56,7 +56,7 @@ export default function Footer() {
           >
             <div className="bg-white w-16 h-16 rounded-full flex items-center justify-center p-2 ring-1 ring-slate-200 shadow-sm group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
               <Image 
-                src="/logo_lnmd.png" 
+                src="/logo_lamadin.png" 
                 alt="Logo comemorativo de 65 Anos da UFF" 
                 width={48}
                 height={48}
