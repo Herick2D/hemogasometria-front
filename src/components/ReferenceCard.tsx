@@ -89,8 +89,8 @@ export default function ReferenceCard() {
             <div className="flex justify-between"><span>pH</span> <strong>7,4</strong></div>
             <div className="flex justify-between"><span>pCO₂</span> <strong>40,0 <span className="text-slate-500">mm Hg</span></strong></div>
             <div className="flex justify-between"><span>HCO₃⁻</span> <strong>24,0 <span className="text-slate-500">mEq/L</span></strong></div>
-            <div className="flex justify-between"><span>PO₂</span> <strong>80,0 <span className="text-slate-500">mm Hg</span></strong></div>
-            <div className="flex justify-between"><span>EB</span> <strong>0 <span className="text-slate-500">mEq/L</span></strong></div>
+            {/* <div className="flex justify-between"><span>PO₂</span> <strong>80,0 <span className="text-slate-500">mm Hg</span></strong></div>
+            <div className="flex justify-between"><span>EB</span> <strong>0 <span className="text-slate-500">mEq/L</span></strong></div> */}
           </div>
           <p className="text-xs text-slate-500 mt-3">
             OBS: Estes valores são para fins didáticos e podem variar entre laboratórios.

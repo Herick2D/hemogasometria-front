@@ -27,7 +27,7 @@ export default function Header() {
 
         <div className="text-center flex-1">
           <h1 className="text-xl md:text-2xl font-bold leading-tight mb-2">
-            Plataforma Interativa de Hemogasometria Veterinária
+            Plataforma Interativa Simplificada de Hemogasometria Veterinária
           </h1>
           <h2 className="text-lg md:text-xl font-semibold mb-1 opacity-90">
             Departamento de Patologia e Clínica Veterinária - MCV
